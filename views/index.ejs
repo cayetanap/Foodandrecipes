@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <button id="update-recipes" type="button" class="btn btn-success">Go to recipe</button>
+</body>
+<script type="text/javascript" src="/javascripts/ajax-scrapping.js"></script>
+<script type="text/javascript" src="/javascripts/index.js"></script>
+
 </html>
