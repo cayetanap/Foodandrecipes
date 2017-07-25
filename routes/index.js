@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var {
-  getTitle
+  getTitle,
+  getIngredients
 } = require("../lib/nightmare")
 
 
@@ -14,9 +15,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/update-recipes', function(req, res, next) {
-  getTitle().then(function(scrapping) {
-    res.send(scrapping)
-  }).catch(error => console.log(error));
+  var a = getTitle();
+  var b = getIngredients();
+  return Promise.all([a, b]).then(function(results) {
+      res.render('update-recipes', {
+        title: results[0],
+        ingredients: results[1]
+      })
+    })
+    .catch(error => console.log(error));
 });
 
 module.exports = router;
